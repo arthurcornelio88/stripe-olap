@@ -23,11 +23,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/fact_invoices.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_customers (
     customer_id,
     email,
@@ -41,11 +38,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_customers.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_products (
     product_id,
     name,
@@ -58,11 +52,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_products.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_prices (
     price_id,
     product_id,
@@ -80,11 +71,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_prices.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_payment_methods (
     payment_method_id,
     type,
@@ -97,11 +85,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_payment_methods.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_subscriptions (
     subscription_id,
     customer_id,
@@ -119,11 +104,8 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_subscriptions.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
-
 COPY INTO dim_payment_intents (
     payment_intent_id,
     customer_id,
@@ -139,7 +121,6 @@ FILE_FORMAT = (
     FIELD_DELIMITER = ',',
     SKIP_HEADER = 1
 );
-
 COPY INTO dim_charges (
     charge_id,
     payment_intent_id,
@@ -154,7 +135,5 @@ FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_charges.csv
 FILE_FORMAT = (
     TYPE = CSV,
     FIELD_DELIMITER = ',',
-    SKIP_HEADER = 1,
-    BOOLEAN_TRUE = 'True',
-    BOOLEAN_FALSE = 'False'
+    SKIP_HEADER = 1
 );
