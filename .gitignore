@@ -12,9 +12,10 @@ wheels/
 # GCP
 gcp_service_account.json
 
-# Environment variables
+# Environment variables #
 .env.prod
 .env
+
 
 # Pytest
 .pytest_cache/
