@@ -18,7 +18,7 @@ from scripts.olap_io import (
 )
 
 # 🔁 Charge les variables d'environnement (.env)
-load_dotenv()
+load_dotenv(override=False)
 ENV = os.getenv("ENV", "DEV").upper()
 
 def main():

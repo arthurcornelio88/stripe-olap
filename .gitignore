@@ -16,10 +16,12 @@ gcp_service_account.json
 .env.prod
 .env
 
-
 # Pytest
 .pytest_cache/
 
 #Python
 .python-version
+
+# Data
+olap_outputs/
 
