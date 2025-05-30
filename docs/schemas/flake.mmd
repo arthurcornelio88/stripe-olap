@@ -1,0 +1,19 @@
+graph TD
+    FACT["fact_invoices"]
+
+    DIM_CUSTOMERS["dim_customers"]
+    DIM_PRODUCTS["dim_products"]
+    DIM_PRICES["dim_prices"]
+    DIM_PAYMENT_METHODS["dim_payment_methods"]
+    DIM_SUBSCRIPTIONS["dim_subscriptions"]
+    DIM_PAYMENT_INTENTS["dim_payment_intents"]
+    DIM_CHARGES["dim_charges"]
+
+    FACT --> DIM_CUSTOMERS
+    FACT --> DIM_PRODUCTS
+    FACT --> DIM_PRICESa
+    FACT --> DIM_PAYMENT_METHODS
+    FACT --> DIM_SUBSCRIPTIONS
+    
+    DIM_PAYMENT_INTENTS
+    DIM_CHARGES

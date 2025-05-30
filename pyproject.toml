@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "dotenv>=0.9.9",
     "google-cloud-storage>=3.1.0",
+    "mermaid-cli>=0.1.2",
     "pandas>=2.2.3",
     "pytest>=8.3.5",
     "snowflake>=1.5.1",
