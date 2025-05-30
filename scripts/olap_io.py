@@ -38,6 +38,23 @@ def load_latest_oltp_json_from_gcs(bucket_name=None, prefix="dump/") -> dict:
     raw_bytes = latest_blob.download_as_bytes()
     return json.load(BytesIO(raw_bytes))
 
+def get_latest_olap_gcs_path(bucket_name: str, prefix="olap_outputs/") -> str:
+    client = configure_storage_client()
+    bucket = client.bucket(bucket_name)
+    blobs = list(bucket.list_blobs(prefix=prefix))
+
+    time_folders = sorted(
+        {b.name.split("/")[1] for b in blobs if b.name.count("/") > 1},
+        reverse=True
+    )
+
+    if not time_folders:
+        raise FileNotFoundError("No OLAP output folders found.")
+
+    latest_folder = time_folders[0]
+    print(f"📁 Latest OLAP output folder: {latest_folder}")
+    return f"{prefix}{latest_folder}/"
+
 
 def load_latest_olap_outputs(bucket_name: str, prefix="olap_outputs/") -> dict:
     client = configure_storage_client()
@@ -63,6 +80,8 @@ def load_latest_olap_outputs(bucket_name: str, prefix="olap_outputs/") -> dict:
         "dim_prices.csv",
         "dim_payment_methods.csv",
         "dim_subscriptions.csv",
+        "dim_payment_intents.csv",  
+        "dim_charges.csv"           
     ]
 
     result = {}

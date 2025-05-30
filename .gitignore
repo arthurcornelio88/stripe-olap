@@ -15,6 +15,7 @@ gcp_service_account.json
 # Environment variables ##
 .env.prod
 .env
+.env.snowflake
 
 # Pytest
 .pytest_cache/

@@ -22,6 +22,20 @@ DIM_EXPECTATIONS = {
         "required_columns": ["subscription_id", "customer_id", "price_id", "status", "currency", "start_date", "created_at", "cancel_at", "ended_at", "plan_interval", "livemode"],
         "id_column": "subscription_id"
     },
+    "dim_payment_intents": {
+        "required_columns": [
+            "payment_intent_id", "customer_id", "invoice_id",
+            "status", "amount", "currency", "created_at"
+        ],
+        "id_column": "payment_intent_id"
+    },
+    "dim_charges": {
+        "required_columns": [
+            "charge_id", "payment_intent_id", "customer_id",
+            "amount", "currency", "status", "paid", "created_at"
+        ],
+        "id_column": "charge_id"
+    }
 }
 
 @pytest.mark.parametrize("table_name", DIM_EXPECTATIONS.keys())

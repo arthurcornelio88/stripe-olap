@@ -9,7 +9,9 @@ from scripts.csv_builders import (
     build_dim_products,
     build_dim_prices,
     build_dim_payment_methods,
-    build_dim_subscriptions
+    build_dim_subscriptions,
+    build_dim_payment_intents,
+    build_dim_charges
 )
 from scripts.olap_io import (
     load_latest_oltp_json_from_gcs,
@@ -45,6 +47,8 @@ def main():
         "dim_prices": build_dim_prices,
         "dim_payment_methods": build_dim_payment_methods,
         "dim_subscriptions": build_dim_subscriptions,
+        "dim_payment_intents": build_dim_payment_intents,
+        "dim_charges": build_dim_charges
     }
 
     for dim_name, builder in dims.items():

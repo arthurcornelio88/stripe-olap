@@ -102,3 +102,37 @@ def build_dim_customers(data: dict) -> pd.DataFrame:
         "created": "created_at"
     })
 
+def build_dim_payment_intents(raw: dict) -> pd.DataFrame:
+    df = pd.DataFrame(raw.get("payment_intents", []))
+    if df.empty:
+        return pd.DataFrame(columns=[
+            "payment_intent_id", "customer_id", "invoice_id",
+            "status", "amount", "currency", "created_at"
+        ])
+    return pd.DataFrame({
+        "payment_intent_id": df["id"],
+        "customer_id": df.get("customer_id", pd.NA),
+        "invoice_id": df.get("invoice", pd.NA),
+        "status": df["status"],
+        "amount": df["amount"],
+        "currency": df["currency"],
+        "created_at": pd.to_datetime(df["created"])
+    })
+
+def build_dim_charges(raw: dict) -> pd.DataFrame:
+    df = pd.DataFrame(raw.get("charges", []))
+    if df.empty:
+        return pd.DataFrame(columns=[
+            "charge_id", "payment_intent_id", "customer_id",
+            "amount", "currency", "status", "paid", "created_at"
+        ])
+    return pd.DataFrame({
+        "charge_id": df["id"],
+        "payment_intent_id": df.get("payment_intent", pd.NA),
+        "customer_id": df.get("customer_id", pd.NA),
+        "amount": df["amount"],
+        "currency": df["currency"],
+        "status": df["status"],
+        "paid": df["paid"],
+        "created_at": pd.to_datetime(df["created"])
+    })

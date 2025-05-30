@@ -65,17 +65,25 @@ The table is built by merging and transforming data from:
 
 ---
 
-### ❓ Why `payment_intents` and `charges` Are Not Included (Yet)
+### ✅ Why `payment_intents` and `charges` Are Now Included Separately
 
-While `payment_intents` and `charges` contain critical payment lifecycle data (authorization, capture, and payment outcomes), they are **not directly embedded** in this version of the `fact_invoices` table for the following reasons:
+While `payment_intents` and `charges` are crucial to understanding the Stripe payment lifecycle (`invoice → payment_intent → charge`), they are intentionally **not embedded inside `fact_invoices`**, but instead exposed via their own dimension tables:
 
-* 🔄 **Decoupling of Payment Events**: Stripe’s `invoice → payment_intent → charge` chain is *asynchronous*. Not every invoice has a 1-to-1 relationship with a final charge — making it complex to ensure accurate joins without risking duplicate or partial data.
+- `dim_payment_intents`
+- `dim_charges`
 
-* 📄 **Separation of Concerns**: The current goal of `fact_invoices` is to serve **billing-level analytics**, centered around issued and finalized invoices. Including payment event granularity would mix behavioral and financial layers.
+This design reflects the following principles:
 
-* 🔍 **Optional Enrichment**: Payment intent metadata (e.g., `receipt_email`, `payment_method_details`) can be joined externally when needed for deeper fraud/risk analysis — or used to build a future `fact_payments` table.
+* 🔄 **Asynchronous Events**  
+  Payment objects evolve independently — some invoices are finalized before any payment intent is confirmed or captured.
 
-A future iteration may include these fields once we finalize a clear, idempotent mapping logic. Until then, this separation keeps the invoice logic lean and auditable.
+* 📄 **Separation of Concerns**  
+  `fact_invoices` focuses on **invoice-level** logic (billing intent), while payment events (auth, success, failure) are treated in **dedicated tables** to avoid mixing layers.
+
+* 🔍 **Joinability When Needed**  
+  Fields like `status`, `receipt_email`, or fraud metadata from charges can be joined externally using `payment_intent_id`, allowing fraud/risk pipelines or reconciliation logic to plug in easily.
+
+This modular structure keeps `fact_invoices` clean and auditable, while providing all raw material needed for deeper payment insights.
 
 ---
 

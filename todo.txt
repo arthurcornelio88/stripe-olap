@@ -9,4 +9,4 @@ talk about pytests
 
 talk about make (default = dev, then, make all ENV=PROD !)
 
-explain with photos, gcp enrichie, pytests, etl working (dump to .csv filtered)
+explain with photos, gcp enrichie, pytests, etl working (dump to .csv filtered). fact + DIM !
