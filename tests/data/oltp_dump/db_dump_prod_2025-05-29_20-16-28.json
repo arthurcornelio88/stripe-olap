@@ -1,0 +1,1331 @@
+{
+  "customers": [
+    {
+      "id": "cus_SOa6bpMu879kKO",
+      "email": "marc@example.com",
+      "name": "Marc Lefevre",
+      "description": null,
+      "phone": null,
+      "balance": 0,
+      "currency": "eur",
+      "delinquent": false,
+      "livemode": false,
+      "deleted": false,
+      "created": "2025-05-28 18:35:05",
+      "invoice_prefix": "CRYXAGF7",
+      "next_invoice_sequence": null,
+      "address": null,
+      "shipping": null,
+      "invoice_settings": {
+        "footer": null,
+        "custom_fields": null,
+        "rendering_options": null,
+        "default_payment_method": {
+          "id": "pm_1RTmwjH1lINcoHaarIH6YWEf",
+          "card": {
+            "brand": "visa",
+            "last4": "4242",
+            "checks": {
+              "cvc_check": "pass",
+              "address_line1_check": null,
+              "address_postal_code_check": null
+            },
+            "wallet": null,
+            "country": "US",
+            "funding": "credit",
+            "exp_year": 2026,
+            "networks": {
+              "available": [
+                "visa"
+              ],
+              "preferred": null
+            },
+            "exp_month": 5,
+            "fingerprint": "w4fNTVifpD1bfYnV",
+            "display_brand": "visa",
+            "generated_from": null,
+            "regulated_status": "unregulated",
+            "three_d_secure_usage": {
+              "supported": true
+            }
+          },
+          "type": "card",
+          "object": "payment_method",
+          "created": 1748450117,
+          "customer": "cus_SOa6bpMu879kKO",
+          "livemode": false,
+          "metadata": {},
+          "allow_redisplay": "unspecified",
+          "billing_details": {
+            "name": null,
+            "email": null,
+            "phone": null,
+            "tax_id": null,
+            "address": {
+              "city": null,
+              "line1": null,
+              "line2": null,
+              "state": null,
+              "country": null,
+              "postal_code": null
+            }
+          }
+        }
+      },
+      "stripe_metadata": {},
+      "tax_exempt": "none",
+      "default_payment_method_id": "pm_1RTmwjH1lINcoHaarIH6YWEf",
+      "test_clock": null
+    },
+    {
+      "id": "cus_SOa6LLDPO9uZGq",
+      "email": "alice@example.com",
+      "name": "Alice Moreau",
+      "description": null,
+      "phone": null,
+      "balance": 0,
+      "currency": "eur",
+      "delinquent": false,
+      "livemode": false,
+      "deleted": false,
+      "created": "2025-05-28 18:35:05",
+      "invoice_prefix": "S5QJYII0",
+      "next_invoice_sequence": null,
+      "address": null,
+      "shipping": null,
+      "invoice_settings": {
+        "footer": null,
+        "custom_fields": null,
+        "rendering_options": null,
+        "default_payment_method": {
+          "id": "pm_1RTmweH1lINcoHaahAwxvn5D",
+          "card": {
+            "brand": "visa",
+            "last4": "4242",
+            "checks": {
+              "cvc_check": "pass",
+              "address_line1_check": null,
+              "address_postal_code_check": null
+            },
+            "wallet": null,
+            "country": "US",
+            "funding": "credit",
+            "exp_year": 2026,
+            "networks": {
+              "available": [
+                "visa"
+              ],
+              "preferred": null
+            },
+            "exp_month": 5,
+            "fingerprint": "w4fNTVifpD1bfYnV",
+            "display_brand": "visa",
+            "generated_from": null,
+            "regulated_status": "unregulated",
+            "three_d_secure_usage": {
+              "supported": true
+            }
+          },
+          "type": "card",
+          "object": "payment_method",
+          "created": 1748450112,
+          "customer": "cus_SOa6LLDPO9uZGq",
+          "livemode": false,
+          "metadata": {},
+          "allow_redisplay": "unspecified",
+          "billing_details": {
+            "name": null,
+            "email": null,
+            "phone": null,
+            "tax_id": null,
+            "address": {
+              "city": null,
+              "line1": null,
+              "line2": null,
+              "state": null,
+              "country": null,
+              "postal_code": null
+            }
+          }
+        }
+      },
+      "stripe_metadata": {},
+      "tax_exempt": "none",
+      "default_payment_method_id": "pm_1RTmweH1lINcoHaahAwxvn5D",
+      "test_clock": null
+    },
+    {
+      "id": "cus_SOa6Ahx6rairaP",
+      "email": "jean@example.com",
+      "name": "Jean Dupont",
+      "description": null,
+      "phone": null,
+      "balance": 0,
+      "currency": "eur",
+      "delinquent": false,
+      "livemode": false,
+      "deleted": false,
+      "created": "2025-05-28 18:35:04",
+      "invoice_prefix": "6CMVGFKG",
+      "next_invoice_sequence": null,
+      "address": null,
+      "shipping": null,
+      "invoice_settings": {
+        "footer": null,
+        "custom_fields": null,
+        "rendering_options": null,
+        "default_payment_method": {
+          "id": "pm_1RTmwaH1lINcoHaarIwpYE8d",
+          "card": {
+            "brand": "visa",
+            "last4": "4242",
+            "checks": {
+              "cvc_check": "pass",
+              "address_line1_check": null,
+              "address_postal_code_check": null
+            },
+            "wallet": null,
+            "country": "US",
+            "funding": "credit",
+            "exp_year": 2026,
+            "networks": {
+              "available": [
+                "visa"
+              ],
+              "preferred": null
+            },
+            "exp_month": 5,
+            "fingerprint": "w4fNTVifpD1bfYnV",
+            "display_brand": "visa",
+            "generated_from": null,
+            "regulated_status": "unregulated",
+            "three_d_secure_usage": {
+              "supported": true
+            }
+          },
+          "type": "card",
+          "object": "payment_method",
+          "created": 1748450108,
+          "customer": "cus_SOa6Ahx6rairaP",
+          "livemode": false,
+          "metadata": {},
+          "allow_redisplay": "unspecified",
+          "billing_details": {
+            "name": null,
+            "email": null,
+            "phone": null,
+            "tax_id": null,
+            "address": {
+              "city": null,
+              "line1": null,
+              "line2": null,
+              "state": null,
+              "country": null,
+              "postal_code": null
+            }
+          }
+        }
+      },
+      "stripe_metadata": {},
+      "tax_exempt": "none",
+      "default_payment_method_id": "pm_1RTmwaH1lINcoHaarIwpYE8d",
+      "test_clock": null
+    }
+  ],
+  "invoices": [
+    {
+      "id": "in_1RTmwlH1lINcoHaahLyXzWlr",
+      "customer_id": "cus_SOa6bpMu879kKO",
+      "status": "paid",
+      "billing_reason": "subscription_create",
+      "collection_method": "charge_automatically",
+      "currency": "eur",
+      "amount_due": 1200,
+      "amount_paid": 1200,
+      "amount_remaining": 0,
+      "total": 1200,
+      "subtotal": 1200,
+      "created": "2025-05-28 18:35:19",
+      "period_start": "2025-05-28 18:35:18",
+      "period_end": "2025-05-28 18:35:18",
+      "livemode": false,
+      "auto_advance": false,
+      "attempted": true,
+      "attempt_count": 1,
+      "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2d2tVdVFCNFdrYkZGSXBiMHp5R1NXQkFvUUxPLDEzOTA2MzM4Mg0200fU69KiHq?s=ap",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2d2tVdVFCNFdrYkZGSXBiMHp5R1NXQkFvUUxPLDEzOTA2MzM4Mg0200fU69KiHq/pdf?s=ap",
+      "number": "JFB9TOTG-0003",
+      "receipt_number": "2072-1714",
+      "stripe_metadata": {},
+      "lines": {
+        "url": "/v1/invoices/in_1RTmwlH1lINcoHaahLyXzWlr/lines",
+        "data": [
+          {
+            "id": "il_1RTmwlH1lINcoHaaB4keuajz",
+            "taxes": [],
+            "amount": 1200,
+            "object": "line_item",
+            "parent": {
+              "type": "subscription_item_details",
+              "invoice_item_details": null,
+              "subscription_item_details": {
+                "proration": false,
+                "invoice_item": null,
+                "subscription": "sub_1RTmwlH1lINcoHaahlNybnXp",
+                "proration_details": {
+                  "credited_items": null
+                },
+                "subscription_item": "si_SOa6YnIZlJzLzT"
+              }
+            },
+            "period": {
+              "end": 1751128518,
+              "start": 1748450118
+            },
+            "invoice": "in_1RTmwlH1lINcoHaahLyXzWlr",
+            "pricing": {
+              "type": "price_details",
+              "price_details": {
+                "price": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+                "product": "prod_SOa6bpvQORBghB"
+              },
+              "unit_amount_decimal": "1200"
+            },
+            "currency": "eur",
+            "livemode": false,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "description": "1 \u00d7 Premium Plan (at \u20ac12.00 / month)",
+            "discountable": true,
+            "discount_amounts": [],
+            "pretax_credit_amounts": []
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "discounts": [],
+      "automatic_tax": {
+        "status": null,
+        "enabled": false,
+        "provider": null,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "default_mandate": null,
+        "payment_method_types": null,
+        "payment_method_options": null
+      },
+      "shipping_cost": null,
+      "status_transitions": {
+        "paid_at": 1748450118,
+        "voided_at": null,
+        "finalized_at": 1748450119,
+        "marked_uncollectible_at": null
+      },
+      "status_transitions_at": null,
+      "default_payment_method_id": null
+    },
+    {
+      "id": "in_1RTmwgH1lINcoHaaz0bEqfRi",
+      "customer_id": "cus_SOa6LLDPO9uZGq",
+      "status": "paid",
+      "billing_reason": "subscription_create",
+      "collection_method": "charge_automatically",
+      "currency": "eur",
+      "amount_due": 800,
+      "amount_paid": 800,
+      "amount_remaining": 0,
+      "total": 800,
+      "subtotal": 800,
+      "created": "2025-05-28 18:35:14",
+      "period_start": "2025-05-28 18:35:13",
+      "period_end": "2025-05-28 18:35:13",
+      "livemode": false,
+      "auto_advance": false,
+      "attempted": true,
+      "attempt_count": 1,
+      "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2MmxTYUFRMTc4VFFQNllKUXdBNFdKVzZYZ1RLLDEzOTA2MzM4Mg0200Leg37cDW?s=ap",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2MmxTYUFRMTc4VFFQNllKUXdBNFdKVzZYZ1RLLDEzOTA2MzM4Mg0200Leg37cDW/pdf?s=ap",
+      "number": "JFB9TOTG-0002",
+      "receipt_number": "2899-2246",
+      "stripe_metadata": {},
+      "lines": {
+        "url": "/v1/invoices/in_1RTmwgH1lINcoHaaz0bEqfRi/lines",
+        "data": [
+          {
+            "id": "il_1RTmwgH1lINcoHaaQnlDyUuC",
+            "taxes": [],
+            "amount": 800,
+            "object": "line_item",
+            "parent": {
+              "type": "subscription_item_details",
+              "invoice_item_details": null,
+              "subscription_item_details": {
+                "proration": false,
+                "invoice_item": null,
+                "subscription": "sub_1RTmwgH1lINcoHaagnFg7pWu",
+                "proration_details": {
+                  "credited_items": null
+                },
+                "subscription_item": "si_SOa66qP9ItXcYw"
+              }
+            },
+            "period": {
+              "end": 1751128513,
+              "start": 1748450113
+            },
+            "invoice": "in_1RTmwgH1lINcoHaaz0bEqfRi",
+            "pricing": {
+              "type": "price_details",
+              "price_details": {
+                "price": "price_1RTmwaH1lINcoHaaFzqwN0c8",
+                "product": "prod_SOa6QdWj0J55jl"
+              },
+              "unit_amount_decimal": "800"
+            },
+            "currency": "eur",
+            "livemode": false,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "description": "1 \u00d7 Standard Plan (at \u20ac8.00 / month)",
+            "discountable": true,
+            "discount_amounts": [],
+            "pretax_credit_amounts": []
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "discounts": [],
+      "automatic_tax": {
+        "status": null,
+        "enabled": false,
+        "provider": null,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "default_mandate": null,
+        "payment_method_types": null,
+        "payment_method_options": null
+      },
+      "shipping_cost": null,
+      "status_transitions": {
+        "paid_at": 1748450113,
+        "voided_at": null,
+        "finalized_at": 1748450114,
+        "marked_uncollectible_at": null
+      },
+      "status_transitions_at": null,
+      "default_payment_method_id": null
+    },
+    {
+      "id": "in_1RTmwbH1lINcoHaaWUz8MY01",
+      "customer_id": "cus_SOa6Ahx6rairaP",
+      "status": "paid",
+      "billing_reason": "subscription_create",
+      "collection_method": "charge_automatically",
+      "currency": "eur",
+      "amount_due": 1200,
+      "amount_paid": 1200,
+      "amount_remaining": 0,
+      "total": 1200,
+      "subtotal": 1200,
+      "created": "2025-05-28 18:35:09",
+      "period_start": "2025-05-28 18:35:09",
+      "period_end": "2025-05-28 18:35:09",
+      "livemode": false,
+      "auto_advance": false,
+      "attempted": true,
+      "attempt_count": 1,
+      "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2RkxkeEVDRnJ0bjk0ckhJSVFZTmJhU0t0eVNQLDEzOTA2MzM4Mg020035eCU4jv?s=ap",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_1RTmfeH1lINcoHaa/test_YWNjdF8xUlRtZmVIMWxJTmNvSGFhLF9TT2E2RkxkeEVDRnJ0bjk0ckhJSVFZTmJhU0t0eVNQLDEzOTA2MzM4Mg020035eCU4jv/pdf?s=ap",
+      "number": "JFB9TOTG-0001",
+      "receipt_number": "2367-1922",
+      "stripe_metadata": {},
+      "lines": {
+        "url": "/v1/invoices/in_1RTmwbH1lINcoHaaWUz8MY01/lines",
+        "data": [
+          {
+            "id": "il_1RTmwbH1lINcoHaagxBkO7T0",
+            "taxes": [],
+            "amount": 1200,
+            "object": "line_item",
+            "parent": {
+              "type": "subscription_item_details",
+              "invoice_item_details": null,
+              "subscription_item_details": {
+                "proration": false,
+                "invoice_item": null,
+                "subscription": "sub_1RTmwbH1lINcoHaaBK5mfBYu",
+                "proration_details": {
+                  "credited_items": null
+                },
+                "subscription_item": "si_SOa61VnLUKJJN8"
+              }
+            },
+            "period": {
+              "end": 1751128509,
+              "start": 1748450109
+            },
+            "invoice": "in_1RTmwbH1lINcoHaaWUz8MY01",
+            "pricing": {
+              "type": "price_details",
+              "price_details": {
+                "price": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+                "product": "prod_SOa6bpvQORBghB"
+              },
+              "unit_amount_decimal": "1200"
+            },
+            "currency": "eur",
+            "livemode": false,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "description": "1 \u00d7 Premium Plan (at \u20ac12.00 / month)",
+            "discountable": true,
+            "discount_amounts": [],
+            "pretax_credit_amounts": []
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "discounts": [],
+      "automatic_tax": {
+        "status": null,
+        "enabled": false,
+        "provider": null,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "default_mandate": null,
+        "payment_method_types": null,
+        "payment_method_options": null
+      },
+      "shipping_cost": null,
+      "status_transitions": {
+        "paid_at": 1748450109,
+        "voided_at": null,
+        "finalized_at": 1748450109,
+        "marked_uncollectible_at": null
+      },
+      "status_transitions_at": null,
+      "default_payment_method_id": null
+    }
+  ],
+  "charges": [
+    {
+      "id": "ch_3RTmwlH1lINcoHaa0nW3eVWo",
+      "amount": 1200,
+      "amount_captured": 1200,
+      "amount_refunded": 0,
+      "currency": "eur",
+      "status": "succeeded",
+      "paid": true,
+      "captured": true,
+      "disputed": false,
+      "refunded": false,
+      "created": "2025-05-28 18:35:20",
+      "livemode": false,
+      "payment_intent": "pi_3RTmwlH1lINcoHaa0Bu718h5",
+      "payment_method": "pm_1RTmwjH1lINcoHaarIH6YWEf",
+      "receipt_url": "https://pay.stripe.com/receipts/invoices/CAcaFwoVYWNjdF8xUlRtZmVIMWxJTmNvSGFhKNes4cEGMgao-Tnafu46LBZC5HXp4D6ZZI2eaybTykDA27XbNgWVzlLYfiNhM9Z16VFJFLqE4_N5feG4?s=ap",
+      "receipt_email": null,
+      "receipt_number": "2072-1714",
+      "billing_details": "{\"address\": {\"city\": null, \"country\": null, \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null}, \"email\": null, \"name\": null, \"phone\": null, \"tax_id\": null}",
+      "outcome": "{\"advice_code\": null, \"network_advice_code\": null, \"network_decline_code\": null, \"network_status\": \"approved_by_network\", \"reason\": null, \"risk_level\": \"normal\", \"risk_score\": 30, \"seller_message\": \"Payment complete.\", \"type\": \"authorized\"}",
+      "payment_method_details": "{\"card\": {\"amount_authorized\": 1200, \"authorization_code\": null, \"brand\": \"visa\", \"checks\": {\"address_line1_check\": null, \"address_postal_code_check\": null, \"cvc_check\": \"pass\"}, \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2026, \"extended_authorization\": {\"status\": \"disabled\"}, \"fingerprint\": \"w4fNTVifpD1bfYnV\", \"funding\": \"credit\", \"incremental_authorization\": {\"status\": \"unavailable\"}, \"installments\": null, \"last4\": \"4242\", \"mandate\": null, \"multicapture\": {\"status\": \"unavailable\"}, \"network\": \"visa\", \"network_token\": {\"used\": false}, \"network_transaction_id\": \"119521027884861\", \"overcapture\": {\"maximum_amount_capturable\": 1200, \"status\": \"unavailable\"}, \"regulated_status\": \"unregulated\", \"three_d_secure\": null, \"wallet\": null}, \"type\": \"card\"}",
+      "stripe_metadata": "{}",
+      "fraud_details": "{}",
+      "description": "Subscription creation",
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "balance_transaction": "txn_3RTmwlH1lINcoHaa0Jd1ysat",
+      "invoice_id": null,
+      "card_brand": null,
+      "card_funding": null
+    },
+    {
+      "id": "ch_3RTmwgH1lINcoHaa1vgROEGa",
+      "amount": 800,
+      "amount_captured": 800,
+      "amount_refunded": 0,
+      "currency": "eur",
+      "status": "succeeded",
+      "paid": true,
+      "captured": true,
+      "disputed": false,
+      "refunded": false,
+      "created": "2025-05-28 18:35:15",
+      "livemode": false,
+      "payment_intent": "pi_3RTmwgH1lINcoHaa1kdJJ2CX",
+      "payment_method": "pm_1RTmweH1lINcoHaahAwxvn5D",
+      "receipt_url": "https://pay.stripe.com/receipts/invoices/CAcaFwoVYWNjdF8xUlRtZmVIMWxJTmNvSGFhKNes4cEGMgYpZNKcwHA6LBb9I5ygxCdc1-OUJDkw_RROWkZKlKjMwGKV9S-vAatczbZu4MQktsGmXb6e?s=ap",
+      "receipt_email": null,
+      "receipt_number": "2899-2246",
+      "billing_details": "{\"address\": {\"city\": null, \"country\": null, \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null}, \"email\": null, \"name\": null, \"phone\": null, \"tax_id\": null}",
+      "outcome": "{\"advice_code\": null, \"network_advice_code\": null, \"network_decline_code\": null, \"network_status\": \"approved_by_network\", \"reason\": null, \"risk_level\": \"normal\", \"risk_score\": 9, \"seller_message\": \"Payment complete.\", \"type\": \"authorized\"}",
+      "payment_method_details": "{\"card\": {\"amount_authorized\": 800, \"authorization_code\": null, \"brand\": \"visa\", \"checks\": {\"address_line1_check\": null, \"address_postal_code_check\": null, \"cvc_check\": \"pass\"}, \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2026, \"extended_authorization\": {\"status\": \"disabled\"}, \"fingerprint\": \"w4fNTVifpD1bfYnV\", \"funding\": \"credit\", \"incremental_authorization\": {\"status\": \"unavailable\"}, \"installments\": null, \"last4\": \"4242\", \"mandate\": null, \"multicapture\": {\"status\": \"unavailable\"}, \"network\": \"visa\", \"network_token\": {\"used\": false}, \"network_transaction_id\": \"119521027884861\", \"overcapture\": {\"maximum_amount_capturable\": 800, \"status\": \"unavailable\"}, \"regulated_status\": \"unregulated\", \"three_d_secure\": null, \"wallet\": null}, \"type\": \"card\"}",
+      "stripe_metadata": "{}",
+      "fraud_details": "{}",
+      "description": "Subscription creation",
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "balance_transaction": "txn_3RTmwgH1lINcoHaa1a2KNF4V",
+      "invoice_id": null,
+      "card_brand": null,
+      "card_funding": null
+    },
+    {
+      "id": "ch_3RTmwcH1lINcoHaa1CCM5Y6G",
+      "amount": 1200,
+      "amount_captured": 1200,
+      "amount_refunded": 0,
+      "currency": "eur",
+      "status": "succeeded",
+      "paid": true,
+      "captured": true,
+      "disputed": false,
+      "refunded": false,
+      "created": "2025-05-28 18:35:10",
+      "livemode": false,
+      "payment_intent": "pi_3RTmwcH1lINcoHaa1arlysKx",
+      "payment_method": "pm_1RTmwaH1lINcoHaarIwpYE8d",
+      "receipt_url": "https://pay.stripe.com/receipts/invoices/CAcaFwoVYWNjdF8xUlRtZmVIMWxJTmNvSGFhKNes4cEGMgY6HTKqj4M6LBbYzZAnuwuXa00ToC0cUMnnSQ16k_m0FmPOkNN4z1TmeEnS_IMHWpoLpLFR?s=ap",
+      "receipt_email": null,
+      "receipt_number": "2367-1922",
+      "billing_details": "{\"address\": {\"city\": null, \"country\": null, \"line1\": null, \"line2\": null, \"postal_code\": null, \"state\": null}, \"email\": null, \"name\": null, \"phone\": null, \"tax_id\": null}",
+      "outcome": "{\"advice_code\": null, \"network_advice_code\": null, \"network_decline_code\": null, \"network_status\": \"approved_by_network\", \"reason\": null, \"risk_level\": \"normal\", \"risk_score\": 51, \"seller_message\": \"Payment complete.\", \"type\": \"authorized\"}",
+      "payment_method_details": "{\"card\": {\"amount_authorized\": 1200, \"authorization_code\": null, \"brand\": \"visa\", \"checks\": {\"address_line1_check\": null, \"address_postal_code_check\": null, \"cvc_check\": \"pass\"}, \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2026, \"extended_authorization\": {\"status\": \"disabled\"}, \"fingerprint\": \"w4fNTVifpD1bfYnV\", \"funding\": \"credit\", \"incremental_authorization\": {\"status\": \"unavailable\"}, \"installments\": null, \"last4\": \"4242\", \"mandate\": null, \"multicapture\": {\"status\": \"unavailable\"}, \"network\": \"visa\", \"network_token\": {\"used\": false}, \"network_transaction_id\": \"119521027884861\", \"overcapture\": {\"maximum_amount_capturable\": 1200, \"status\": \"unavailable\"}, \"regulated_status\": \"unregulated\", \"three_d_secure\": null, \"wallet\": null}, \"type\": \"card\"}",
+      "stripe_metadata": "{}",
+      "fraud_details": "{}",
+      "description": "Subscription creation",
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "balance_transaction": "txn_3RTmwcH1lINcoHaa1V3g3IGw",
+      "invoice_id": null,
+      "card_brand": null,
+      "card_funding": null
+    }
+  ],
+  "payment_intents": [
+    {
+      "id": "pi_3RTmwlH1lINcoHaa0Bu718h5",
+      "status": "succeeded",
+      "currency": "eur",
+      "amount": 1200,
+      "amount_capturable": 0,
+      "amount_received": 1200,
+      "capture_method": "automatic",
+      "confirmation_method": "automatic",
+      "client_secret": "pi_3RTmwlH1lINcoHaa0Bu718h5_secret_0OO7UnRHitoiYFEJbpXLiSUSe",
+      "created": "2025-05-28 18:35:19",
+      "canceled_at": null,
+      "cancellation_reason": null,
+      "livemode": false,
+      "customer_id": "cus_SOa6bpMu879kKO",
+      "payment_method": "pm_1RTmwjH1lINcoHaarIH6YWEf",
+      "description": "Subscription creation",
+      "receipt_email": null,
+      "payment_method_types": [
+        "card",
+        "link"
+      ],
+      "payment_method_options": {
+        "card": {
+          "network": null,
+          "installments": null,
+          "mandate_options": null,
+          "request_three_d_secure": "automatic"
+        },
+        "link": {
+          "persistent_token": null
+        }
+      },
+      "amount_details": {
+        "tip": {}
+      },
+      "stripe_metadata": {},
+      "next_action": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "card_brand": null,
+      "card_funding": null,
+      "setup_future_usage": null
+    },
+    {
+      "id": "pi_3RTmwgH1lINcoHaa1kdJJ2CX",
+      "status": "succeeded",
+      "currency": "eur",
+      "amount": 800,
+      "amount_capturable": 0,
+      "amount_received": 800,
+      "capture_method": "automatic",
+      "confirmation_method": "automatic",
+      "client_secret": "pi_3RTmwgH1lINcoHaa1kdJJ2CX_secret_j0Ubjo3hdS5BDtHw7zy7ncNDY",
+      "created": "2025-05-28 18:35:14",
+      "canceled_at": null,
+      "cancellation_reason": null,
+      "livemode": false,
+      "customer_id": "cus_SOa6LLDPO9uZGq",
+      "payment_method": "pm_1RTmweH1lINcoHaahAwxvn5D",
+      "description": "Subscription creation",
+      "receipt_email": null,
+      "payment_method_types": [
+        "card",
+        "link"
+      ],
+      "payment_method_options": {
+        "card": {
+          "network": null,
+          "installments": null,
+          "mandate_options": null,
+          "request_three_d_secure": "automatic"
+        },
+        "link": {
+          "persistent_token": null
+        }
+      },
+      "amount_details": {
+        "tip": {}
+      },
+      "stripe_metadata": {},
+      "next_action": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "card_brand": null,
+      "card_funding": null,
+      "setup_future_usage": null
+    },
+    {
+      "id": "pi_3RTmwcH1lINcoHaa1arlysKx",
+      "status": "succeeded",
+      "currency": "eur",
+      "amount": 1200,
+      "amount_capturable": 0,
+      "amount_received": 1200,
+      "capture_method": "automatic",
+      "confirmation_method": "automatic",
+      "client_secret": "pi_3RTmwcH1lINcoHaa1arlysKx_secret_iCpPWoTvHJw2MVfbRgjo89ly5",
+      "created": "2025-05-28 18:35:10",
+      "canceled_at": null,
+      "cancellation_reason": null,
+      "livemode": false,
+      "customer_id": "cus_SOa6Ahx6rairaP",
+      "payment_method": "pm_1RTmwaH1lINcoHaarIwpYE8d",
+      "description": "Subscription creation",
+      "receipt_email": null,
+      "payment_method_types": [
+        "card",
+        "link"
+      ],
+      "payment_method_options": {
+        "card": {
+          "network": null,
+          "installments": null,
+          "mandate_options": null,
+          "request_three_d_secure": "automatic"
+        },
+        "link": {
+          "persistent_token": null
+        }
+      },
+      "amount_details": {
+        "tip": {}
+      },
+      "stripe_metadata": {},
+      "next_action": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "card_brand": null,
+      "card_funding": null,
+      "setup_future_usage": null
+    }
+  ],
+  "payment_methods": [
+    {
+      "id": "pm_1RTmwaH1lINcoHaarIwpYE8d",
+      "type": "card",
+      "created": "2025-05-28 18:35:08",
+      "livemode": false,
+      "customer_id": "cus_SOa6Ahx6rairaP",
+      "billing_details": {
+        "name": null,
+        "email": null,
+        "phone": null,
+        "tax_id": null,
+        "address": {
+          "city": null,
+          "line1": null,
+          "line2": null,
+          "state": null,
+          "country": null,
+          "postal_code": null
+        }
+      },
+      "stripe_metadata": {},
+      "us_bank_account": null,
+      "card": {
+        "brand": "visa",
+        "last4": "4242",
+        "checks": {
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_postal_code_check": null
+        },
+        "wallet": null,
+        "country": "US",
+        "funding": "credit",
+        "exp_year": 2026,
+        "networks": {
+          "available": [
+            "visa"
+          ],
+          "preferred": null
+        },
+        "exp_month": 5,
+        "fingerprint": "w4fNTVifpD1bfYnV",
+        "display_brand": "visa",
+        "generated_from": null,
+        "regulated_status": "unregulated",
+        "three_d_secure_usage": {
+          "supported": true
+        }
+      },
+      "card_brand": null,
+      "card_funding": null,
+      "card_last4": null
+    },
+    {
+      "id": "pm_1RTmweH1lINcoHaahAwxvn5D",
+      "type": "card",
+      "created": "2025-05-28 18:35:12",
+      "livemode": false,
+      "customer_id": "cus_SOa6LLDPO9uZGq",
+      "billing_details": {
+        "name": null,
+        "email": null,
+        "phone": null,
+        "tax_id": null,
+        "address": {
+          "city": null,
+          "line1": null,
+          "line2": null,
+          "state": null,
+          "country": null,
+          "postal_code": null
+        }
+      },
+      "stripe_metadata": {},
+      "us_bank_account": null,
+      "card": {
+        "brand": "visa",
+        "last4": "4242",
+        "checks": {
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_postal_code_check": null
+        },
+        "wallet": null,
+        "country": "US",
+        "funding": "credit",
+        "exp_year": 2026,
+        "networks": {
+          "available": [
+            "visa"
+          ],
+          "preferred": null
+        },
+        "exp_month": 5,
+        "fingerprint": "w4fNTVifpD1bfYnV",
+        "display_brand": "visa",
+        "generated_from": null,
+        "regulated_status": "unregulated",
+        "three_d_secure_usage": {
+          "supported": true
+        }
+      },
+      "card_brand": null,
+      "card_funding": null,
+      "card_last4": null
+    },
+    {
+      "id": "pm_1RTmwjH1lINcoHaarIH6YWEf",
+      "type": "card",
+      "created": "2025-05-28 18:35:17",
+      "livemode": false,
+      "customer_id": "cus_SOa6bpMu879kKO",
+      "billing_details": {
+        "name": null,
+        "email": null,
+        "phone": null,
+        "tax_id": null,
+        "address": {
+          "city": null,
+          "line1": null,
+          "line2": null,
+          "state": null,
+          "country": null,
+          "postal_code": null
+        }
+      },
+      "stripe_metadata": {},
+      "us_bank_account": null,
+      "card": {
+        "brand": "visa",
+        "last4": "4242",
+        "checks": {
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_postal_code_check": null
+        },
+        "wallet": null,
+        "country": "US",
+        "funding": "credit",
+        "exp_year": 2026,
+        "networks": {
+          "available": [
+            "visa"
+          ],
+          "preferred": null
+        },
+        "exp_month": 5,
+        "fingerprint": "w4fNTVifpD1bfYnV",
+        "display_brand": "visa",
+        "generated_from": null,
+        "regulated_status": "unregulated",
+        "three_d_secure_usage": {
+          "supported": true
+        }
+      },
+      "card_brand": null,
+      "card_funding": null,
+      "card_last4": null
+    }
+  ],
+  "prices": [
+    {
+      "id": "price_1RTmwaH1lINcoHaaFzqwN0c8",
+      "active": true,
+      "currency": "eur",
+      "billing_scheme": "per_unit",
+      "type": "recurring",
+      "unit_amount": 800,
+      "unit_amount_decimal": "800",
+      "product_id": "prod_SOa6QdWj0J55jl",
+      "recurring": "{\"interval\": \"month\", \"interval_count\": 1, \"meter\": null, \"trial_period_days\": null, \"usage_type\": \"licensed\"}",
+      "livemode": false,
+      "created": "2025-05-28 18:35:08",
+      "nickname": null,
+      "lookup_key": null,
+      "stripe_metadata": {},
+      "tax_behavior": "unspecified",
+      "tiers_mode": null,
+      "custom_unit_amount": null,
+      "transform_quantity": null,
+      "product_name": null,
+      "interval": null
+    },
+    {
+      "id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+      "active": true,
+      "currency": "eur",
+      "billing_scheme": "per_unit",
+      "type": "recurring",
+      "unit_amount": 1200,
+      "unit_amount_decimal": "1200",
+      "product_id": "prod_SOa6bpvQORBghB",
+      "recurring": "{\"interval\": \"month\", \"interval_count\": 1, \"meter\": null, \"trial_period_days\": null, \"usage_type\": \"licensed\"}",
+      "livemode": false,
+      "created": "2025-05-28 18:35:07",
+      "nickname": null,
+      "lookup_key": null,
+      "stripe_metadata": {},
+      "tax_behavior": "unspecified",
+      "tiers_mode": null,
+      "custom_unit_amount": null,
+      "transform_quantity": null,
+      "product_name": null,
+      "interval": null
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_SOa6QdWj0J55jl",
+      "name": "Standard Plan",
+      "description": "Access to standard features",
+      "active": true,
+      "livemode": false,
+      "created": "2025-05-28 18:35:07",
+      "updated": "2025-05-28 18:35:07",
+      "default_price": null,
+      "tax_code": null,
+      "unit_label": null,
+      "statement_descriptor": null,
+      "url": null,
+      "images": [],
+      "marketing_features": [],
+      "stripe_metadata": {
+        "tag": "standard_plan"
+      },
+      "package_dimensions": null,
+      "shippable": null
+    },
+    {
+      "id": "prod_SOa6bpvQORBghB",
+      "name": "Premium Plan",
+      "description": "Access to premium features",
+      "active": true,
+      "livemode": false,
+      "created": "2025-05-28 18:35:06",
+      "updated": "2025-05-28 18:35:06",
+      "default_price": null,
+      "tax_code": null,
+      "unit_label": null,
+      "statement_descriptor": null,
+      "url": null,
+      "images": [],
+      "marketing_features": [],
+      "stripe_metadata": {
+        "tag": "premium_plan"
+      },
+      "package_dimensions": null,
+      "shippable": null
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub_1RTmwlH1lINcoHaahlNybnXp",
+      "status": "active",
+      "currency": "eur",
+      "customer_id": "cus_SOa6bpMu879kKO",
+      "price_id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+      "start_date": "2025-05-28 18:35:18",
+      "created": "2025-05-28 18:35:18",
+      "cancel_at": null,
+      "canceled_at": null,
+      "ended_at": null,
+      "cancel_at_period_end": false,
+      "livemode": false,
+      "stripe_metadata": {},
+      "items": {
+        "url": "/v1/subscription_items?subscription=sub_1RTmwlH1lINcoHaahlNybnXp",
+        "data": [
+          {
+            "id": "si_SOa6YnIZlJzLzT",
+            "plan": {
+              "id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+              "meter": null,
+              "active": true,
+              "amount": 1200,
+              "object": "plan",
+              "created": 1748450107,
+              "product": "prod_SOa6bpvQORBghB",
+              "currency": "eur",
+              "interval": "month",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "tiers_mode": null,
+              "usage_type": "licensed",
+              "amount_decimal": "1200",
+              "billing_scheme": "per_unit",
+              "interval_count": 1,
+              "transform_usage": null,
+              "trial_period_days": null
+            },
+            "price": {
+              "id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+              "type": "recurring",
+              "active": true,
+              "object": "price",
+              "created": 1748450107,
+              "product": "prod_SOa6bpvQORBghB",
+              "currency": "eur",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "recurring": {
+                "meter": null,
+                "interval": "month",
+                "usage_type": "licensed",
+                "interval_count": 1,
+                "trial_period_days": null
+              },
+              "lookup_key": null,
+              "tiers_mode": null,
+              "unit_amount": 1200,
+              "tax_behavior": "unspecified",
+              "billing_scheme": "per_unit",
+              "custom_unit_amount": null,
+              "transform_quantity": null,
+              "unit_amount_decimal": "1200"
+            },
+            "object": "subscription_item",
+            "created": 1748450119,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "tax_rates": [],
+            "subscription": "sub_1RTmwlH1lINcoHaahlNybnXp",
+            "billing_thresholds": null,
+            "current_period_end": 1751128518,
+            "current_period_start": 1748450118
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "invoice_settings": {
+        "issuer": {
+          "type": "self"
+        },
+        "account_tax_ids": null
+      },
+      "automatic_tax": {
+        "enabled": false,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "payment_method_types": null,
+        "payment_method_options": null,
+        "save_default_payment_method": "off"
+      },
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "create_invoice"
+        }
+      },
+      "latest_invoice": "in_1RTmwlH1lINcoHaahLyXzWlr",
+      "subscription_item_id": "si_SOa6YnIZlJzLzT",
+      "plan_interval": "month"
+    },
+    {
+      "id": "sub_1RTmwgH1lINcoHaagnFg7pWu",
+      "status": "active",
+      "currency": "eur",
+      "customer_id": "cus_SOa6LLDPO9uZGq",
+      "price_id": "price_1RTmwaH1lINcoHaaFzqwN0c8",
+      "start_date": "2025-05-28 18:35:13",
+      "created": "2025-05-28 18:35:13",
+      "cancel_at": null,
+      "canceled_at": null,
+      "ended_at": null,
+      "cancel_at_period_end": false,
+      "livemode": false,
+      "stripe_metadata": {},
+      "items": {
+        "url": "/v1/subscription_items?subscription=sub_1RTmwgH1lINcoHaagnFg7pWu",
+        "data": [
+          {
+            "id": "si_SOa66qP9ItXcYw",
+            "plan": {
+              "id": "price_1RTmwaH1lINcoHaaFzqwN0c8",
+              "meter": null,
+              "active": true,
+              "amount": 800,
+              "object": "plan",
+              "created": 1748450108,
+              "product": "prod_SOa6QdWj0J55jl",
+              "currency": "eur",
+              "interval": "month",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "tiers_mode": null,
+              "usage_type": "licensed",
+              "amount_decimal": "800",
+              "billing_scheme": "per_unit",
+              "interval_count": 1,
+              "transform_usage": null,
+              "trial_period_days": null
+            },
+            "price": {
+              "id": "price_1RTmwaH1lINcoHaaFzqwN0c8",
+              "type": "recurring",
+              "active": true,
+              "object": "price",
+              "created": 1748450108,
+              "product": "prod_SOa6QdWj0J55jl",
+              "currency": "eur",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "recurring": {
+                "meter": null,
+                "interval": "month",
+                "usage_type": "licensed",
+                "interval_count": 1,
+                "trial_period_days": null
+              },
+              "lookup_key": null,
+              "tiers_mode": null,
+              "unit_amount": 800,
+              "tax_behavior": "unspecified",
+              "billing_scheme": "per_unit",
+              "custom_unit_amount": null,
+              "transform_quantity": null,
+              "unit_amount_decimal": "800"
+            },
+            "object": "subscription_item",
+            "created": 1748450114,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "tax_rates": [],
+            "subscription": "sub_1RTmwgH1lINcoHaagnFg7pWu",
+            "billing_thresholds": null,
+            "current_period_end": 1751128513,
+            "current_period_start": 1748450113
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "invoice_settings": {
+        "issuer": {
+          "type": "self"
+        },
+        "account_tax_ids": null
+      },
+      "automatic_tax": {
+        "enabled": false,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "payment_method_types": null,
+        "payment_method_options": null,
+        "save_default_payment_method": "off"
+      },
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "create_invoice"
+        }
+      },
+      "latest_invoice": "in_1RTmwgH1lINcoHaaz0bEqfRi",
+      "subscription_item_id": "si_SOa66qP9ItXcYw",
+      "plan_interval": "month"
+    },
+    {
+      "id": "sub_1RTmwbH1lINcoHaaBK5mfBYu",
+      "status": "active",
+      "currency": "eur",
+      "customer_id": "cus_SOa6Ahx6rairaP",
+      "price_id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+      "start_date": "2025-05-28 18:35:09",
+      "created": "2025-05-28 18:35:09",
+      "cancel_at": null,
+      "canceled_at": null,
+      "ended_at": null,
+      "cancel_at_period_end": false,
+      "livemode": false,
+      "stripe_metadata": {},
+      "items": {
+        "url": "/v1/subscription_items?subscription=sub_1RTmwbH1lINcoHaaBK5mfBYu",
+        "data": [
+          {
+            "id": "si_SOa61VnLUKJJN8",
+            "plan": {
+              "id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+              "meter": null,
+              "active": true,
+              "amount": 1200,
+              "object": "plan",
+              "created": 1748450107,
+              "product": "prod_SOa6bpvQORBghB",
+              "currency": "eur",
+              "interval": "month",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "tiers_mode": null,
+              "usage_type": "licensed",
+              "amount_decimal": "1200",
+              "billing_scheme": "per_unit",
+              "interval_count": 1,
+              "transform_usage": null,
+              "trial_period_days": null
+            },
+            "price": {
+              "id": "price_1RTmwZH1lINcoHaaAyfIKRKI",
+              "type": "recurring",
+              "active": true,
+              "object": "price",
+              "created": 1748450107,
+              "product": "prod_SOa6bpvQORBghB",
+              "currency": "eur",
+              "livemode": false,
+              "metadata": {},
+              "nickname": null,
+              "recurring": {
+                "meter": null,
+                "interval": "month",
+                "usage_type": "licensed",
+                "interval_count": 1,
+                "trial_period_days": null
+              },
+              "lookup_key": null,
+              "tiers_mode": null,
+              "unit_amount": 1200,
+              "tax_behavior": "unspecified",
+              "billing_scheme": "per_unit",
+              "custom_unit_amount": null,
+              "transform_quantity": null,
+              "unit_amount_decimal": "1200"
+            },
+            "object": "subscription_item",
+            "created": 1748450110,
+            "metadata": {},
+            "quantity": 1,
+            "discounts": [],
+            "tax_rates": [],
+            "subscription": "sub_1RTmwbH1lINcoHaaBK5mfBYu",
+            "billing_thresholds": null,
+            "current_period_end": 1751128509,
+            "current_period_start": 1748450109
+          }
+        ],
+        "object": "list",
+        "has_more": false,
+        "total_count": 1
+      },
+      "invoice_settings": {
+        "issuer": {
+          "type": "self"
+        },
+        "account_tax_ids": null
+      },
+      "automatic_tax": {
+        "enabled": false,
+        "liability": null,
+        "disabled_reason": null
+      },
+      "payment_settings": {
+        "payment_method_types": null,
+        "payment_method_options": null,
+        "save_default_payment_method": "off"
+      },
+      "trial_settings": {
+        "end_behavior": {
+          "missing_payment_method": "create_invoice"
+        }
+      },
+      "latest_invoice": "in_1RTmwbH1lINcoHaaWUz8MY01",
+      "subscription_item_id": "si_SOa61VnLUKJJN8",
+      "plan_interval": "month"
+    }
+  ]
+}

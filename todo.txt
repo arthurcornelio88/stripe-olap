@@ -1,0 +1,9 @@
+urgent
+1) payment intent
+
+
+talk about pytests
+
+-> logic behind etl_to_snow
+-> 
+
