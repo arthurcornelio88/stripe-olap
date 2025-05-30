@@ -25,4 +25,4 @@ def olap_outputs(gcp_setup):
     bucket = os.getenv("GCS_BUCKET")
     if not bucket:
         pytest.exit("❌ GCS_BUCKET not set in environment")
-    return load_latest_olap_outputs(bucket)
+    return load_latest_olap_outputs(bucket)#
