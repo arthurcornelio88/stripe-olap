@@ -25,6 +25,25 @@ test-offline:  ## Run tests with GCS mocked (offline mode)
 	@echo "🧪 Running tests (OFFLINE mode)..."
 	OFFLINE=1 ENV=$(ENV) pytest -v tests/
 
-all: oltp-olap test  ## Run both ETL and tests
+# Makefile for OLAP + Snowflake pipeline
 
-.PHONY: help oltp-olap test test-offline all
+generate_sql_queries:  ## Generate CREATE TABLE SQL and COPY INTO from GCS CSVs
+	ENV=PROD python scripts/generate_create_tables.py
+	ENV=PROD python scripts/generate_copy_into_sql.py
+
+load_snowflake: ## Load everything (infra + tables + views + load data)
+	ENV=PROD python scripts/load_to_snowflake.py
+
+dryrun_snowflake: ## Print all SQL steps without executing anything
+	ENV=PROD python scripts/load_to_snowflake.py --dry-run
+
+
+setup_snowflake: ## Only set up infra (database, schema, warehouse)
+	ENV=PROD python -c "import sys; sys.path.insert(0, 'scripts'); \
+from load_to_snowflake import connect_to_snowflake, run_sql_file; \
+conn = connect_to_snowflake(); run_sql_file('scripts/sql/setup_snowflake_infra.sql', conn)"
+
+
+all: oltp-olap test generate_sql_queries load_snowflake ## Run both ETL and tests
+
+.PHONY: help oltp-olap test test-offline generate_sql_queries load_snowflake dryrun_snowflake setup_snowflake all

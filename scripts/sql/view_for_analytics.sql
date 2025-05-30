@@ -1,19 +1,22 @@
-create or replace view vw_monthly_revenue as
-select
-    date_trunc('month', created_at) as month,
-    sum(amount) as total_revenue
-from fact_invoices
-group by 1
-order by 1;
+CREATE OR REPLACE VIEW vw_monthly_revenue AS
+SELECT
+    DATE_TRUNC('month', created_at) AS month,
+    SUM(amount_paid) AS total_revenue
+FROM fact_invoices
+GROUP BY 1
+ORDER BY 1;
 
-create or replace view vw_active_subscriptions as
-select *
-from dim_subscriptions
-where status = 'active';
 
-create or replace view vw_customer_ltv as
-select
+CREATE OR REPLACE VIEW vw_active_subscriptions AS
+SELECT *
+FROM dim_subscriptions
+WHERE status = 'active';
+
+
+CREATE OR REPLACE VIEW vw_customer_ltv AS
+SELECT
     customer_id,
-    sum(amount) as lifetime_value
-from fact_invoices
-group by customer_id;
+    SUM(amount_paid) AS lifetime_value
+FROM fact_invoices
+GROUP BY customer_id;
+

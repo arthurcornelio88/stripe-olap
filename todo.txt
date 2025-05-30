@@ -1,12 +1,17 @@
-urgent
-1) payment intent
+fact_dim readme refactor : 
+explain with photos, gcp enrichie, pytests, etl working (dump to .csv filtered). 
+fact + DIM !
 
+==
 
+snowflake part : mettre des photos sur readme !
 
-talk about pytests
+=
 
--> logic behind etl_to_snow
-
+readme.md 
 talk about make (default = dev, then, make all ENV=PROD !)
+Makefile, 
+ENV
+ENV snowflake
 
-explain with photos, gcp enrichie, pytests, etl working (dump to .csv filtered). fact + DIM !
+

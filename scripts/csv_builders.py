@@ -1,4 +1,5 @@
 import pandas as pd
+from scripts.flatten_utils import apply_flatten_if_needed
 
 # This module contains functions to build fact invoices and dimension tables from a JSON dump of Stripe data.
 
@@ -79,14 +80,15 @@ def build_dim_payment_methods(data: dict) -> pd.DataFrame:
 
 def build_dim_prices(data: dict) -> pd.DataFrame:
     df = pd.DataFrame(data["prices"])
+    df = apply_flatten_if_needed(df, "dim_prices")
     return df[[
         "id", "product_id", "currency", "unit_amount", "type",
-        "billing_scheme", "recurring", "livemode", "created"
+        "billing_scheme", "recurring_interval", "recurring_count", "recurring_usage_type",
+        "livemode", "created"
     ]].rename(columns={
         "id": "price_id",
         "created": "created_at"
     })
-
 def build_dim_products(data: dict) -> pd.DataFrame:
     df = pd.DataFrame(data["products"])
     return df[["id", "name", "description", "active", "created", "updated"]].rename(columns={

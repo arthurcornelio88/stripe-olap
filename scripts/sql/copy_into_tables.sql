@@ -1,12 +1,160 @@
-create or replace stage gcs_stage_prod
-  TODO url='gcs://stripe-bucket-prod_v3/olap_outputs/2025-05-30_16-33-17/' 
-  storage_integration = my_gcs_integration;
+COPY INTO fact_invoices (
+    invoice_id,
+    customer_id,
+    customer_email,
+    amount_paid,
+    currency,
+    status,
+    created_at,
+    period_start,
+    period_end,
+    product_id,
+    product_name,
+    price_id,
+    plan_amount,
+    plan_interval,
+    subscription_id,
+    payment_method_type,
+    receipt_number,
+    livemode,
+    card_brand
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/fact_invoices.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
 
-copy into fact_invoices from @gcs_stage_prod/fact_invoices.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_customers from @gcs_stage_prod/dim_customers.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_products from @gcs_stage_prod/dim_products.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_prices from @gcs_stage_prod/dim_prices.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_payment_methods from @gcs_stage_prod/dim_payment_methods.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_subscriptions from @gcs_stage_prod/dim_subscriptions.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_payment_intents from @gcs_stage_prod/dim_payment_intents.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
-copy into dim_charges from @gcs_stage_prod/dim_charges.csv file_format = (type = csv field_delimiter = ',' skip_header = 1);
+COPY INTO dim_customers (
+    customer_id,
+    email,
+    name,
+    delinquent,
+    currency,
+    livemode,
+    created_at
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_customers.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
+
+COPY INTO dim_products (
+    product_id,
+    name,
+    description,
+    active,
+    created_at,
+    updated_at
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_products.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
+
+COPY INTO dim_prices (
+    price_id,
+    product_id,
+    currency,
+    unit_amount,
+    type,
+    billing_scheme,
+    recurring_interval,
+    recurring_count,
+    recurring_usage_type,
+    livemode,
+    created_at
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_prices.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
+
+COPY INTO dim_payment_methods (
+    payment_method_id,
+    type,
+    customer_id,
+    livemode,
+    created_at,
+    card_brand
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_payment_methods.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
+
+COPY INTO dim_subscriptions (
+    subscription_id,
+    customer_id,
+    price_id,
+    status,
+    currency,
+    start_date,
+    created_at,
+    cancel_at,
+    ended_at,
+    plan_interval,
+    livemode
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_subscriptions.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);
+
+COPY INTO dim_payment_intents (
+    payment_intent_id,
+    customer_id,
+    invoice_id,
+    status,
+    amount,
+    currency,
+    created_at
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_payment_intents.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1
+);
+
+COPY INTO dim_charges (
+    charge_id,
+    payment_intent_id,
+    customer_id,
+    amount,
+    currency,
+    status,
+    paid,
+    created_at
+)
+FROM @STRIPE_OLAP.RAW.GCS_STAGE_PROD/dim_charges.csv
+FILE_FORMAT = (
+    TYPE = CSV,
+    FIELD_DELIMITER = ',',
+    SKIP_HEADER = 1,
+    BOOLEAN_TRUE = 'True',
+    BOOLEAN_FALSE = 'False'
+);

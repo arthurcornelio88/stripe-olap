@@ -11,8 +11,12 @@ DIM_EXPECTATIONS = {
         "id_column": "product_id"
     },
     "dim_prices": {
-        "required_columns": ["price_id", "product_id", "currency", "unit_amount", "type", "billing_scheme", "recurring", "livemode", "created_at"],
-        "id_column": "price_id"
+    "required_columns": [
+        "price_id", "product_id", "currency", "unit_amount", "type",
+        "billing_scheme", "recurring_interval", "recurring_count", "recurring_usage_type",
+        "livemode", "created_at"
+    ],
+    "id_column": "price_id"
     },
     "dim_payment_methods": {
         "required_columns": ["payment_method_id", "type", "customer_id", "livemode", "created_at", "card_brand"],
