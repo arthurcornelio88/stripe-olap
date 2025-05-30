@@ -6,6 +6,8 @@ Here is the fully **refactored English version** of your `fact_dim.md` file, upd
 
 This document describes the design and construction logic of the `fact_invoices` table in our OLAP schema, built from raw Stripe JSON data extracted from the OLTP layer.
 
+<img src="img/flake.png" width=500>
+
 ---
 
 ## 🔍 Purpose
@@ -134,7 +136,7 @@ An automated Pytest suite validates the CSV exports against the raw OLTP JSON du
 
 ### 📸 Pytest Output Example
 
-<img src="docs/img/etl2.png" alt="etl2"  width="500"/>
+<img src="img/etl2.png" alt="etl2"  width="500"/>
 
 ---
 
@@ -148,20 +150,10 @@ gs://stripe-bucket-prod_v3/olap_outputs/{timestamp}/
 
 Example from May 31, 2025:
 
-<img src="/docs/img/etl11.png" width="750"/>
+<img src="img/etl1.png" width="500"/>
+
+<img src="img/etl11.png" width="500"/>
 
 ---
 
-## 🚀 One-Command Orchestration
 
-The full ETL process — including extraction, transformation, saving, and validation — is launched with:
-
-```bash
-make all ENV=PROD
-```
-
-<img src="/docs/img/etl1.png" width="750"/>
-
----
-
-Let me know if you'd like to proceed with a similar breakdown for each `dim_*` table.

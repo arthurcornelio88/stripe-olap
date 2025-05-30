@@ -1,19 +1,14 @@
-Voici la **version complète prête à l’emploi** de ton fichier `docs/snowflake_etl.md`, à inclure dans ton dépôt.
-
----
-
-````markdown
 # 📘 Snowflake Integration for the OLAP Pipeline
 
 ## 🧭 Goal
 
 This document outlines how Snowflake is integrated into the OLAP ETL process. It explains:
 
-- What Snowflake is and how we use it
-- How we connect and authenticate
-- How data is dynamically loaded from GCS
-- How infrastructure, tables, and views are versioned and deployed
-- The available Makefile targets to automate everything
+- What Snowflake is and how we use it  
+- How we connect and authenticate  
+- How data is dynamically loaded from GCS  
+- How infrastructure, tables, and views are versioned and deployed  
+- The available Makefile targets to automate everything  
 
 ---
 
@@ -23,9 +18,9 @@ This document outlines how Snowflake is integrated into the OLAP ETL process. It
 
 For this OLAP project, Snowflake acts as the **destination layer**. Transformed data is loaded there in the form of:
 
-- `fact_` tables (e.g., `fact_invoices`)
-- `dim_` tables (e.g., `dim_customers`)
-- `vw_` views for analysis
+- `fact_` tables (e.g., `fact_invoices`)  
+- `dim_` tables (e.g., `dim_customers`)  
+- `vw_` views for analysis  
 
 ---
 
@@ -37,22 +32,22 @@ We authenticate to Snowflake via environment variables stored in `.env.snowflake
 SNOWFLAKE_USER=<your-username>
 SNOWFLAKE_PASSWORD=<your-password>
 SNOWFLAKE_ACCOUNT=<your-account>
-SNOWFLAKE_DATABASE=STRIPE_OLAP # Already set
-SNOWFLAKE_SCHEMA=RAW # Already set
-SNOWFLAKE_WAREHOUSE=WH_STRIPE_OLAP # Already set
-````
+SNOWFLAKE_DATABASE=STRIPE_OLAP
+SNOWFLAKE_SCHEMA=RAW
+SNOWFLAKE_WAREHOUSE=WH_STRIPE_OLAP
+```
 
 These credentials are loaded automatically by the ETL scripts.
 
-> You can pick them in your Snowflake UI at `Account Details`.
+> You can retrieve them via the Snowflake UI under `Account Details`.
 
 ---
 
 ## ⚙️ Connecting from Python
 
-We use the official `snowflake-connector-python` library to execute all SQL commands.
+We use the official `snowflake-connector-python` package to run SQL commands.
 
-Connection is handled centrally in `load_to_snowflake.py`:
+Connection logic is centralized in `load_to_snowflake.py`:
 
 ```python
 conn = snowflake.connector.connect(
@@ -69,86 +64,124 @@ conn = snowflake.connector.connect(
 
 ## 🗂 File Structure
 
-All Snowflake logic is versioned and stored in:
+All SQL logic is versioned under:
 
 ```
 scripts/sql/
-├── setup_snowflake_infra.sql     # Create database, schema, warehouse
-├── create_tables.sql             # Define fact_ and dim_ tables
-├── view_for_analytics.sql        # Create business views for BI
-├── copy_into_tables.sql          # COPY INTO commands (templated)
+├── setup_snowflake_infra.sql     # Create DB, schema, warehouse
+├── create_tables.sql             # Define all fact_ and dim_ tables
+├── copy_into_tables.sql          # COPY INTO statements for each CSV
+├── view_for_analytics.sql        # View logic (vw_monthly_revenue, etc.)
 ```
 
-These files are automatically run by the `load_to_snowflake.py` script.
+These are executed automatically by the orchestrator.
 
 ---
 
 ## ☁️ Loading Data from GCS
 
-The OLAP pipeline outputs CSV files to GCS, under timestamped folders like:
+ETL output is saved as CSVs to GCS, in timestamped folders like:
 
 ```
-gs://stripe-bucket-prod_v3/olap_outputs/2025-05-30_16-33-17/
+gs://stripe-bucket-prod_v3/olap_outputs/2025-05-30_22-36-26/
 ```
 
-The Python utility `get_latest_olap_gcs_path` detects the latest one automatically.
+<img src="img/etl11.png" width="750"/>
 
 ---
 
 ## 🧩 COPY INTO Automation
 
-Instead of generating SQL inline, we use `scripts/sql/copy_into_tables.sql` with placeholders:
+Rather than hard-coding SQL, the pipeline dynamically populates a template like this:
 
 ```sql
 CREATE OR REPLACE STAGE gcs_stage_prod
   URL = 'gcs://{{BUCKET}}/{{OLAP_PATH}}'
   STORAGE_INTEGRATION = my_gcs_integration;
 
-COPY INTO fact_invoices FROM @gcs_stage_prod/fact_invoices.csv FILE_FORMAT=(TYPE=CSV FIELD_DELIMITER=',' SKIP_HEADER=1);
-...
+COPY INTO fact_invoices
+  FROM @gcs_stage_prod/fact_invoices.csv
+  FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = ',' SKIP_HEADER = 1);
 ```
 
-These placeholders are replaced dynamically via Python before execution.
+Python handles placeholder replacement prior to execution.
 
 ---
 
-## 🧱 Table Structure
+## 🔁 Generated SQL from CSV Metadata
 
-All core tables are defined in `create_tables.sql`. They follow a standard star schema model:
+This is the point where `.csv` files are translated into fully defined SQL DDLs + COPY commands.
 
-* `fact_invoices`: billing events
-* `dim_customers`: customer info
-* `dim_products`, `dim_prices`, etc.
+### CLI Output (DDL + COPY)
+
+<img src="img/etl3.png" width="750"/>
+---
+
+## 🔐 GCP Snowflake Integration
+
+Snowflake authenticates to GCS via a configured GCP service account, declared using a `STORAGE INTEGRATION`.
+
+<img src="img/snow-gcp.png" width="750"/>
 
 ---
 
-## 👓 Analytical Views
+## 🧱 Table Creation (from SQL)
 
-Views are created for business analysis and dashboards. These are defined in `view_for_analytics.sql`.
+This is the moment the tables are created in CLI.
 
-| View name                 | Description                              |
-| ------------------------- | ---------------------------------------- |
-| `vw_monthly_revenue`      | Monthly revenue aggregated from invoices |
-| `vw_customer_ltv`         | Customer lifetime value (LTV)            |
-| `vw_active_subscriptions` | Subscriptions that are currently active  |
+<img src="img/etl31.png" width="500"/>
 
-They are auto-deployed along with the pipeline.
+And physically created in Snowflake using the generated SQL.
+
+<img src="img/etl4.png" width="750"/>
+
+---
+
+## 📥 Copying Data into Snowflake
+
+This step uses `COPY INTO` to ingest the CSV data into Snowflake tables.
+
+<img src="img/etl32.png" width="500"/>
+
+---
+
+## 🔎 Data Validation in Snowflake
+
+Once ingested, you can visually verify the presence and structure of the data.
+
+<img src="img/etl41.png" width="750"/>
+
+---
+
+## 👓 Views for Analytics
+
+Views are created as part of the pipeline for analytical convenience.
+
+### Example: `vw_active_subscriptions`
+
+<img src="img/etl5.png" width="750"/>
+
+### Example: `vw_monthly_revenue`
+
+<img src="img/etl51.png" width="750"/>
 
 ---
 
 ## 🛠 Makefile Targets
 
-| Command                 | Description                                        |
-| ----------------------- | -------------------------------------------------- |
-| `make load_snowflake`   | Full pipeline: infra + tables + views + data load  |
-| `make dryrun_snowflake` | Preview all SQL steps without executing anything   |
-| `make setup_snowflake`  | Run only the infrastructure setup (DB, schema, WH) |
+| Command                 | Description                                          |
+|-------------------------|------------------------------------------------------|
+| `make load_snowflake`   | Full pipeline: infra + tables + views + data load   |
+| `make dryrun_snowflake` | Preview all SQL steps without executing anything    |
+| `make setup_snowflake`  | Run only the infrastructure setup (DB, schema, WH)  |
 
 ---
 
 ## ✅ Summary
 
-* Snowflake is the final layer of the OLAP pipeline
-* All SQL logic is centralized in versioned `.sql` files
-* Python orchestrates execution, with dynamic GCS path detection
-* The pipeline is fully automatable via `make`
+- Snowflake serves as the final storage and query layer  
+- SQL logic is versioned and dynamically generated  
+- Python scripts orchestrate everything end-to-end  
+- `make` commands allow full automation  
+
+---

@@ -110,7 +110,7 @@ make all ENV=PROD
 
 This will:
 
-1. Run the ETL (`scripts/etl_to_snowflake.py`)
+1. Run the ETL
 2. Upload the CSVs to GCS
 3. Run validation tests
 4. Load the latest OLAP dump into Snowflake
@@ -122,6 +122,17 @@ This will:
 To set up Snowflake external access to GCS via `STORAGE INTEGRATION`, see:
 
 👉 [`docs/snowflake_gcs.md`](docs/snowflake_gcs.md)
-👉 or `infra/snowflake/README.md` for admin setup
+
+## 🚀 To Go Further
+
+This project is fully operational — you can run it locally, validate it with tests, and inspect the result visually (see screenshots above).
+
+To explore how the Snowflake schema was modeled:
+
+👉 [`docs/fact_dim.md`](docs/fact_dim.md)
+
+To understand the full logic behind the GCS-to-Snowflake data loading process:
+
+👉 [`docs/snowflake_etl.md`](docs/snowflake_etl.md)
 
 ---
