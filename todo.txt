@@ -1,17 +1,1 @@
-fact_dim readme refactor : 
-explain with photos, gcp enrichie, pytests, etl working (dump to .csv filtered). 
-fact + DIM !
-
-==
-
-snowflake part : mettre des photos sur readme !
-
-=
-
-readme.md 
-talk about make (default = dev, then, make all ENV=PROD !)
-Makefile, 
-ENV
-ENV snowflake
-
 
