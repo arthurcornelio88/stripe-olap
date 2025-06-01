@@ -1,0 +1,27 @@
+stages:
+  - setup
+  - run
+
+# Persist virtual environment between jobs (optional depending on runner config)
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .venv/
+
+# Common setup for all jobs
+before_script:
+  - export PATH="$HOME/.local/bin:$PATH"
+  - 'echo "🐍 Python version: $(python3 --version)"'
+  - make uv
+
+setup:
+  stage: setup
+  script:
+    - echo "✅ Environment ready for PROD"
+
+run:
+  stage: run
+  script:
+    - make all ENV=PROD
+  only:
+    - main
