@@ -4,6 +4,8 @@ ENV ?= DEV
 PYTHON := .venv/bin/python
 PYTEST := .venv/bin/pytest
 
+export PYTHONPATH := $(shell pwd)
+
 .DEFAULT_GOAL := help
 
 # ========= SETUP =========
