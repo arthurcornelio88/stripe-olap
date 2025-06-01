@@ -5,7 +5,7 @@ import snowflake.connector
 from olap_io import get_latest_olap_gcs_path
 from gcp import configure_gcp_credentials
 
-load_dotenv(".env.snowflake")
+load_dotenv()
 
 def connect_to_snowflake():
     return snowflake.connector.connect(
