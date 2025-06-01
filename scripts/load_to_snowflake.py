@@ -7,7 +7,6 @@ from gcp import configure_gcp_credentials
 
 load_dotenv(".env.snowflake")
 
-
 def connect_to_snowflake():
     return snowflake.connector.connect(
         user=os.getenv("SNOWFLAKE_USER"),
