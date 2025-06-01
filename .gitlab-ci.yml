@@ -11,7 +11,7 @@ cache:
 # Common setup for all jobs
 before_script:
   - export PATH="$HOME/.local/bin:$PATH"
-  - export PYTHONPATH := $(pwd)
+  - export PYTHONPATH=$(pwd)
   - 'echo "🐍 Python version: $(python3 --version)"'
   - make uv
 
