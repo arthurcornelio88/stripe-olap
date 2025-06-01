@@ -56,6 +56,6 @@ conn = connect_to_snowflake(); run_sql_file('scripts/sql/setup_snowflake_infra.s
 
 # ========= FULL PIPELINE =========
 
-all: oltp-olap test generate_sql_queries load_snowflake ## Run both ETL and tests
+all: uv oltp-olap test generate_sql_queries load_snowflake ## Run both ETL and tests
 
 .PHONY: help uv oltp-olap test test-offline generate_sql_queries load_snowflake dryrun_snowflake setup_snowflake all
