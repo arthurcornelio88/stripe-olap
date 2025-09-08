@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.13"
 
 [[package]]
@@ -784,6 +784,7 @@ dependencies = [
     { name = "pandas" },
     { name = "pytest" },
     { name = "snowflake" },
+    { name = "snowflake-connector-python" },
 ]
 
 [package.metadata]
@@ -794,6 +795,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pytest", specifier = ">=8.3.5" },
     { name = "snowflake", specifier = ">=1.5.1" },
+    { name = "snowflake-connector-python", specifier = ">=3.15.0" },
 ]
 
 [[package]]

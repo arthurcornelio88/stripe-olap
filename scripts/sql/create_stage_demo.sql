@@ -1,0 +1,2 @@
+-- Simple local stage for demo
+CREATE OR REPLACE STAGE STRIPE_OLAP.RAW.LOCAL_STAGE_DEMO;

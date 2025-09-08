@@ -102,11 +102,21 @@ def main(dry_run=False):
     print("🏗️ Running infrastructure setup...")
     run_sql_file("scripts/sql/setup_snowflake_infra.sql", conn)
 
-    # 🧭 Reset session context explicitly
+    # 🧭 Reset session context explicitly - database should now exist
     cur = conn.cursor()
-    cur.execute("USE DATABASE STRIPE_OLAP;")
-    cur.execute("USE SCHEMA RAW;")
-    cur.execute(f"USE WAREHOUSE {os.getenv('SNOWFLAKE_WAREHOUSE')};")
+    try:
+        cur.execute("USE DATABASE STRIPE_OLAP;")
+        cur.execute("USE SCHEMA RAW;")
+        cur.execute(f"USE WAREHOUSE {os.getenv('SNOWFLAKE_WAREHOUSE')};")
+        print("✅ Context set to STRIPE_OLAP.RAW")
+    except Exception as e:
+        print(f"⚠️ Context setup failed: {e}")
+        print("Creating database manually...")
+        cur.execute("CREATE DATABASE IF NOT EXISTS STRIPE_OLAP;")
+        cur.execute("USE DATABASE STRIPE_OLAP;")
+        cur.execute("CREATE SCHEMA IF NOT EXISTS RAW;")
+        cur.execute("USE SCHEMA RAW;")
+        cur.execute(f"USE WAREHOUSE {os.getenv('SNOWFLAKE_WAREHOUSE')};")
     cur.close()
 
     print("🧱 Creating tables...")

@@ -41,11 +41,14 @@ test-offline:  ## Run tests with GCS mocked (offline mode)
 
 # ========= SNOWFLAKE LOGIC =========
 
+setup_gcs_integration: ## Setup automatic GCS-Snowflake integration
+	ENV=PROD $(PYTHON) scripts/setup_gcs_integration.py
+
 generate_sql_queries:  ## Generate CREATE TABLE SQL and COPY INTO from GCS CSVs
 	ENV=PROD $(PYTHON) scripts/generate_create_tables.py
 	ENV=PROD $(PYTHON) scripts/generate_copy_into_sql.py
 
-load_snowflake: ## Load everything (infra + tables + views + load data)
+load_snowflake: setup_gcs_integration ## Load everything (GCS integration + infra + tables + views + load data)
 	ENV=PROD $(PYTHON) scripts/load_to_snowflake.py
 
 dryrun_snowflake: ## Print all SQL steps without executing anything
@@ -58,6 +61,24 @@ conn = connect_to_snowflake(); run_sql_file('scripts/sql/setup_snowflake_infra.s
 
 # ========= FULL PIPELINE =========
 
-all: uv oltp-olap test generate_sql_queries load_snowflake ## Run both ETL and tests
+conclusion: ## Display pipeline completion summary
+	@echo ""
+	@echo "🎉 =============================================="
+	@echo "🎉 OLAP PIPELINE COMPLETED SUCCESSFULLY!"
+	@echo "🎉 =============================================="
+	@echo ""
+	@echo "✅ ETL Transformation: OLTP → Dimensional Model"
+	@echo "✅ Snowflake Integration: GCS → Data Warehouse"
+	@echo "✅ Tables Created: 1 Fact + 7 Dimensions"
+	@echo "✅ Views Created: 3 Business Analytics Views"
+	@echo "✅ Tests Passed: All validations successful"
+	@echo ""
+	@echo "🔗 Next Steps:"
+	@echo "   • Open Snowflake UI: Query your dimensional data"
+	@echo "   • Run analytics: SELECT * FROM vw_monthly_revenue;"
+	@echo "   • Demo ready: Your OLAP pipeline is production-ready!"
+	@echo ""
 
-.PHONY: help uv oltp-olap test test-offline generate_sql_queries load_snowflake dryrun_snowflake setup_snowflake all
+all: uv oltp-olap generate_sql_queries load_snowflake test conclusion ## Run complete OLAP pipeline: ETL + Snowflake + tests + summary
+
+.PHONY: help uv oltp-olap test test-offline generate_sql_queries load_snowflake dryrun_snowflake setup_snowflake conclusion all
