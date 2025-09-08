@@ -2,6 +2,15 @@
 
 Transform raw Stripe dumps (OLTP) into clean OLAP data models with a fully automated ETL pipeline powered by Python, GCS, and Snowflake.
 
+## 🎬 Demo Video
+
+<video controls width="800">
+  <source src="docs/video/olap_readable.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+*End-to-end OLAP pipeline: JSON → ETL → Snowflake → Analytics-ready dimensional model*
+
 ---
 
 ## 🔄 Pipeline Overview
