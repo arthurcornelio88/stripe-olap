@@ -4,12 +4,12 @@ Transform raw Stripe dumps (OLTP) into clean OLAP data models with a fully autom
 
 ## 🎬 Demo Video
 
-<video controls width="800">
-  <source src="docs/video/olap_readable.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![OLAP Pipeline Demo](docs/video/olap_thumbnail.jpg)](docs/video/olap_readable.mp4)
 
-*End-to-end OLAP pipeline: JSON → ETL → Snowflake → Analytics-ready dimensional model*
+**📥 [Download Demo Video](docs/video/olap_readable.mp4)** *(2.9MB)*  
+*End-to-end OLAP pipeline: JSON → ETL → Snowflake → Analytics-ready dimensional model*  
+
+> � **How to watch:** Click the thumbnail or download link above to save the video locally and watch the complete demo
 
 ---
 
