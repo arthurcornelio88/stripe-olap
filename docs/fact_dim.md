@@ -1,7 +1,3 @@
-Here is the fully **refactored English version** of your `fact_dim.md` file, updated with `<img src="/docs/img/..."/>` references and preserving the full structure and intent of your original document.
-
----
-
 # 📊 Fact Table Design: `fact_invoices`
 
 This document describes the design and construction logic of the `fact_invoices` table in our OLAP schema, built from raw Stripe JSON data extracted from the OLTP layer.
